@@ -1,3 +1,13 @@
 @use "../../Styles/global" as *;
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+
+    &__link {
+        padding: 1rem;
+    }
+}
