@@ -2,6 +2,15 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
+.navbar-container {
+    position: relative;
+
+    &__wrapper {
+        position: absolute;
+        right: 1px;
+    }
+}
+
 .navbar {
     display: flex;
     justify-content: flex-end;

@@ -1,0 +1,49 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.hero-left {
+    border: 1px solid black;
+
+    &__header,
+    &__subhead {
+        margin-left: 2rem;
+    }
+
+    &__header {
+        @include mobileH1;
+        padding-top: 7rem;
+    }
+
+    &__subhead {
+        @include mobileH2;
+        padding-top: 1rem;
+    }
+}
+
+.hero-right {
+    height: 30svh;
+    width: 100%;
+    border: 1px solid purple;
+
+    &__img1,
+    &__img2,
+    &__img3,
+    &__img4,
+    &__img5,
+    &__img6 {
+        width: 180px;
+        height: 180px;
+        border: 1px solid red;
+    }
+    &__img2 {
+    }
+    &__img3 {
+    }
+    &__img4 {
+    }
+    &__img5 {
+    }
+    &__img6 {
+    }
+}
