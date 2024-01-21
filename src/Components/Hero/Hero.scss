@@ -2,12 +2,17 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
+.hero-container {
+    position: relative;
+    border: 1px solid purple;
+}
+
 .hero-left {
-    border: 1px solid black;
+    position: absolute;
 
     &__header,
     &__subhead {
-        margin-left: 2rem;
+        margin-left: 3.5rem;
     }
 
     &__header {
@@ -22,9 +27,11 @@
 }
 
 .hero-right {
-    height: 30svh;
     width: 100%;
-    border: 1px solid purple;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: absolute;
 
     &__img1,
     &__img2,
@@ -32,18 +39,37 @@
     &__img4,
     &__img5,
     &__img6 {
-        width: 180px;
-        height: 180px;
+        width: 130px;
+        height: 190px;
         border: 1px solid red;
+        position: absolute;
     }
+
+    &__img1 {
+        right: 90%;
+    }
+
     &__img2 {
+        right: 60%;
+        top: -6rem;
     }
+
     &__img3 {
+        top: -3rem;
     }
+
     &__img4 {
+        top: 4rem;
+        right: 30%;
     }
+
     &__img5 {
+        top: 15rem;
+        right: 70%;
     }
+
     &__img6 {
+        top: 14rem;
+        right: 5%;
     }
 }
