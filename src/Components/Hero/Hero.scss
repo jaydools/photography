@@ -4,18 +4,18 @@
 
 .hero-container {
     position: relative;
+    height: 55svh;
+    overflow: hidden;
 }
 
 .hero-left {
-    position: absolute;
-    background-color: $white;
-    margin-top: 7rem;
-    z-index: 10;
-
     &__header,
     &__subhead {
+        position: absolute;
         padding-left: 3.5rem;
         padding-right: 0.5rem;
+        top: 10rem;
+        background-color: $white;
 
         @include tablet {
             padding-left: 5rem;
@@ -28,6 +28,7 @@
 
     &__header {
         @include mobileH1;
+        z-index: 10;
 
         @include tablet {
             @include desktopH1;
@@ -45,7 +46,8 @@
 
     &__subhead {
         @include mobileH2;
-        padding-top: 1rem;
+        padding-top: 4rem;
+        z-index: 9;
 
         @include tablet {
             @include desktopH2;
