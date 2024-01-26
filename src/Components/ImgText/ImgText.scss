@@ -20,13 +20,17 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    align-items: center;
 
     &__header {
-        border: 1px solid orange;
+        @include mobileH2;
     }
 
     &__button {
-        border: 1px solid green;
-        margin: 1rem;
+        border: 1px solid $cta;
+        border-radius: $buttonRadius;
+        margin: 2rem;
+        padding: 0.5rem 3rem;
+        @include mobileH3;
     }
 }
