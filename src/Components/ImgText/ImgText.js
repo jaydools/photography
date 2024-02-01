@@ -1,10 +1,11 @@
 import React from "react";
 import "./ImgText.scss";
 
-function ImgText({ images }) {
+function ImgText({ currentImages }) {
+    // console.log(currentImages);
     return (
         <section className="img-text-container">
-            <div className="img-container">Image side</div>
+            <img className="img-container" src={currentImages} />
             <div className="text-container">
                 <h2 className="text-container__header">Landscapes</h2>
                 <button className="text-container__button">View</button>

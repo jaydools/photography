@@ -14,13 +14,13 @@ function App() {
         const getImages = async () => {
             try {
                 let res = await axios.get(
-                    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}`,
+                    `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image`,
                     {
                         headers: {
                             Authorization: `Basic ${Buffer.from(
-                                process.env.CLOUDINARY_API_KEY +
+                                process.env.REACT_APP_CLOUDINARY_API_KEY +
                                     ":" +
-                                    process.env.CLOUDINARY_API_SECRET
+                                    process.env.REACT_APP_CLOUDINARY_API_SECRET
                             ).toString("base64")}`,
                         },
                     }
@@ -43,13 +43,13 @@ function App() {
 
         getImages();
     }, []);
-
+    console.log(currentImages);
     return (
         <div>
             <Navbar />
             <Hero />
-            <ImgText images={currentImages} />
-            <ImgText images={currentImages} />
+            <ImgText currentImages={currentImages} />
+            <ImgText currentImages={currentImages} />
         </div>
     );
 }
