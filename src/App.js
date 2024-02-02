@@ -6,6 +6,23 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
+    const [getImages, setGetImages] = useState([]);
+
+    useEffect(() => {
+        const getImages = async () => {
+            const imageEndpoint = `${process.env.REACT_APP_BACKEND_URL}/images`;
+
+            try {
+                const response = await axios.get(imageEndpoint);
+                const images = response.data;
+                setGetImages(images);
+            } catch (error) {
+                console.error("Error fetching images: ", error);
+            }
+        };
+        getImages();
+    }, []);
+    // console.log(getImages);
     // write logic here for both ImgText's and pass to each and flex reverse one
     // const [isReversed, setIsReversed] = useState(false);
     const [currentImages, setCurrentImages] = useState([]);
@@ -48,8 +65,8 @@ function App() {
         <div>
             <Navbar />
             <Hero />
-            <ImgText currentImages={currentImages} />
-            <ImgText currentImages={currentImages} />
+            {/* <ImgText currentImages={currentImages} /> */}
+            <ImgText />
         </div>
     );
 }
