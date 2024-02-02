@@ -10,40 +10,40 @@ function App() {
     // const [isReversed, setIsReversed] = useState(false);
     const [currentImages, setCurrentImages] = useState([]);
 
-    useEffect(() => {
-        const getImages = async () => {
-            try {
-                let res = await axios.get(
-                    `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image`,
-                    {
-                        headers: {
-                            Authorization: `Basic ${Buffer.from(
-                                process.env.REACT_APP_CLOUDINARY_API_KEY +
-                                    ":" +
-                                    process.env.REACT_APP_CLOUDINARY_API_SECRET
-                            ).toString("base64")}`,
-                        },
-                    }
-                );
+    // useEffect(() => {
+    //     const getImages = async () => {
+    //         try {
+    //             let res = await axios.get(
+    //                 `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image`,
+    //                 {
+    //                     headers: {
+    //                         Authorization: `Basic ${Buffer.from(
+    //                             process.env.REACT_APP_CLOUDINARY_API_KEY +
+    //                                 ":" +
+    //                                 process.env.REACT_APP_CLOUDINARY_API_SECRET
+    //                         ).toString("base64")}`,
+    //                     },
+    //                 }
+    //             );
 
-                const { resources } = res.data;
-                const images = resources.map((resource) => {
-                    return {
-                        id: resource.asset_id,
-                        title: resource.public_id,
-                        image: resource.secure_url,
-                    };
-                });
+    //             const { resources } = res.data;
+    //             const images = resources.map((resource) => {
+    //                 return {
+    //                     id: resource.asset_id,
+    //                     title: resource.public_id,
+    //                     image: resource.secure_url,
+    //                 };
+    //             });
 
-                setCurrentImages(images);
-            } catch (err) {
-                console.error("unknown error... initiate self destruct", err);
-            }
-        };
+    //             setCurrentImages(images);
+    //         } catch (err) {
+    //             console.error("unknown error... initiate self destruct", err);
+    //         }
+    //     };
 
-        getImages();
-    }, []);
-    console.log(currentImages);
+    //     getImages();
+    // }, []);
+    // console.log(currentImages);
     return (
         <div>
             <Navbar />
