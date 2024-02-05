@@ -20,7 +20,7 @@ function App() {
                 console.error("Error fetching images: ", error);
             }
         };
-        getImages();
+        getImages(); ///testet
     }, []);
     console.log(getImages);
 
