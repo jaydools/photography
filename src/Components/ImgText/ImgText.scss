@@ -1,0 +1,36 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.img-text-container {
+    border: 1px dotted purple;
+    z-index: 20;
+    background-color: $white;
+    height: 40svh;
+    display: flex;
+}
+
+.img-container {
+    width: 60%;
+    border: 1px solid blue;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+
+    &__header {
+        @include mobileH2;
+    }
+
+    &__button {
+        border: 1px solid $cta;
+        border-radius: $buttonRadius;
+        margin: 2rem;
+        padding: 0.5rem 3rem;
+        @include mobileH3;
+    }
+}

@@ -1,0 +1,18 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.navbar-container {
+    position: relative;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: $white;
+
+    &__link {
+        padding: 1rem;
+    }
+}
