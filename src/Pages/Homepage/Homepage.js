@@ -21,16 +21,32 @@ function Homepage() {
         };
         getImages();
     }, []);
-    console.log(getImages);
-    // write logic here for both ImgText's and pass to each and flex reverse one
-    // const [isReversed, setIsReversed] = useState(false);
-    const [currentImages, setCurrentImages] = useState([]);
+    console.log(getImages); // gets first curser of images
+
+    // write logic here to sort if its a landscape image
+    const getRandoLandscape = () => {
+        if (getImages.resources) {
+            const landscapeImages = getImages.resources.filter(
+                (image) => image.folder === "photography/landscapes"
+            );
+
+            if (landscapeImages.length === 0) {
+                return console.log("No images found?!?!?!");
+            }
+
+            const randomIndex = Math.floor(Math.random() * landscapeImages.length);
+            return landscapeImages[randomIndex].secure_url;
+        }
+    };
+
+    const randoLandscapeImg = getRandoLandscape();
+
     return (
-        <div>
+        <main>
             <Hero />
-            <ImgText currentImages={currentImages} />
+            <ImgText randoLandscapeImg={randoLandscapeImg} />
             <ImgText />
-        </div>
+        </main>
     );
 }
 
