@@ -39,13 +39,14 @@ function Homepage() {
         }
     };
     const getCategoryName = (folder) => {
-        // Split the folder string by "/" and return the last part
+        // Split the folder string by "/" and return the last part then capitalize
         const parts = folder.split("/");
         // Remove the first half
         const categoryName = parts[parts.length - 1];
         // Return that, capitailize first
         return categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
     };
+
     const randoLandscapeImg = getRandoLandscape();
     const categoryName = getCategoryName("photography/landscapes");
 
