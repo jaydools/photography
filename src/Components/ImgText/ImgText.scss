@@ -2,17 +2,28 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
-.img-text-container {
-    border: 1px dotted purple;
-    z-index: 20;
-    background-color: $white;
-    height: 40svh;
+.img-text-container-reverse {
     display: flex;
+    flex-direction: row-reverse;
+
+    @include tablet {
+        z-index: 20;
+        height: 40svh;
+    }
+}
+
+.img-text-container {
+    display: flex;
+
+    @include tablet {
+        z-index: 20;
+        height: 40svh;
+    }
 }
 
 .img-container {
+    object-fit: cover;
     width: 60%;
-    border: 1px solid blue;
 }
 
 .text-container {
@@ -24,12 +35,12 @@
 
     &__header {
         @include mobileH2;
+        padding-bottom: 0.5rem;
     }
 
     &__button {
         border: 1px solid $cta;
         border-radius: $buttonRadius;
-        margin: 2rem;
         padding: 0.5rem 3rem;
         @include mobileH3;
     }
