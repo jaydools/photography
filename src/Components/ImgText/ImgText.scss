@@ -5,20 +5,14 @@
 .img-text-container-reverse {
     display: flex;
     flex-direction: row-reverse;
-
-    @include tablet {
-        z-index: 20;
-        height: 40svh;
-    }
+    z-index: 20;
+    height: 40svh;
 }
 
 .img-text-container {
     display: flex;
-
-    @include tablet {
-        z-index: 20;
-        height: 40svh;
-    }
+    z-index: 20;
+    height: 40svh;
 }
 
 .img-container {
