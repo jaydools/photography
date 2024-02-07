@@ -23,6 +23,30 @@ function Homepage() {
     }, []);
     console.log(getImages); // gets all images
 
+    // // logic here for Hero that just picks rando 6
+    const getHeroImages = () => {
+        if (getImages.resources) {
+            const heroImages = getImages.resources.filter((image) =>
+                image.folder.includes("photography")
+            );
+
+            if (heroImages.length === 0) {
+                return console.log("hmm.. no images at all?");
+            }
+            const randomImages = [];
+            const numImagesToSelect = 6;
+
+            for (let i = 0; i < numImagesToSelect; i++) {
+                const randomSix = Math.floor(Math.random() * heroImages.length);
+                randomImages.push(heroImages[randomSix].secure_url);
+            }
+            return randomImages;
+        } else {
+            return [];
+        }
+    };
+    const randoImg = getHeroImages();
+
     // Logic here to sort if its a landscape image and pick a rando
     const getRandoLandscape = () => {
         if (getImages.resources) {
@@ -71,7 +95,7 @@ function Homepage() {
 
     return (
         <main>
-            <Hero />
+            <Hero randoImg={randoImg} />
             <ImgText
                 currentImg={randoLandscapeImg}
                 reverseOrder={false}

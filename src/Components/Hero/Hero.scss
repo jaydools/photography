@@ -79,7 +79,7 @@
     &__img6 {
         width: 130px;
         height: 190px;
-        border: 1px solid red;
+        object-fit: cover;
         position: absolute;
         filter: drop-shadow(5px 5px 10px #000000);
     }
