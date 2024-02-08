@@ -10,15 +10,9 @@ function Hero({ randoImg }) {
             const scrollers = imagesRef.current;
 
             if (scrollers && scrollers.length > 0) {
-                scrollers.forEach((image, index) => {
+                scrollers.forEach((image) => {
                     const translateY = -150 * (scrollPosition / window.innerHeight);
                     image.style.transform = `translateY(${translateY}px)`;
-                    // Apply animation effect dynamically based on scroll position
-                    if (scrollPosition > (index + 1) * 100) {
-                        image.classList.add("heroUpDown");
-                    } else {
-                        image.classList.remove("heroUpDown");
-                    }
                 });
             }
         };
