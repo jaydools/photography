@@ -18,6 +18,7 @@
 .img-container {
     object-fit: cover;
     width: 60%;
+    border: none;
 }
 
 .text-container {
@@ -26,6 +27,7 @@
     justify-content: center;
     margin: 0 auto;
     align-items: center;
+    color: $cta;
 
     &__header {
         @include mobileH2;
@@ -33,7 +35,7 @@
     }
 
     &__button {
-        border: 1px solid $black;
+        border: 1px solid $cta;
         border-radius: $buttonRadius;
         padding: 0.5rem 3rem;
         @include mobileH3;

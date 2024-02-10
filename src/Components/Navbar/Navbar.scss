@@ -2,15 +2,26 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
+@keyframes slideDown {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0;
+    }
+}
+
 .navbar-container {
     position: relative;
     z-index: 100;
+    animation-name: slideDown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .navbar {
     display: flex;
     justify-content: flex-end;
-    background-color: $black;
     color: $cta;
 
     &__link {
