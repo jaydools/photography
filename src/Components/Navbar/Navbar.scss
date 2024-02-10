@@ -10,7 +10,8 @@
 .navbar {
     display: flex;
     justify-content: flex-end;
-    background-color: $white;
+    background-color: $black;
+    color: $cta;
 
     &__link {
         padding: 1rem;

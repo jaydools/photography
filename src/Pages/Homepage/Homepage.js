@@ -34,7 +34,7 @@ function Homepage() {
                 return console.log("hmm.. no images at all?");
             }
             const randomImages = [];
-            const numImagesToSelect = 6;
+            const numImagesToSelect = 7;
 
             for (let i = 0; i < numImagesToSelect; i++) {
                 const randomSix = Math.floor(Math.random() * heroImages.length);
