@@ -13,9 +13,7 @@
     @include desktop {
         background-position: center;
     }
-}
 
-.hero-left {
     &__header,
     &__subhead {
         position: absolute;
@@ -43,18 +41,18 @@
         }
 
         @include tablet {
-            padding-top: 0.5rem;
+            // padding-top: 0.5rem;
             padding-right: 0.5rem;
         }
         @include desktop {
-            padding-top: 1rem;
+            // padding-top: 1rem;
             padding-right: 1rem;
         }
     }
 
     &__subhead {
         @include mobileH2;
-        padding-top: 4rem;
+        padding-top: 3rem;
         z-index: 9;
 
         @include tablet {
@@ -69,7 +67,35 @@
             padding-bottom: 1rem;
             padding-right: 1rem;
         }
+
+        &--small {
+            @include mobileH3;
+            position: relative;
+            top: 15.75rem;
+            z-index: 9;
+            color: $cta;
+            padding-left: 2rem;
+            width: 45%;
+            max-width: 200px;
+
+            @include tablet {
+                padding-left: 3rem;
+                top: 17.75rem;
+                max-width: 275px;
+                width: 25%;
+            }
+
+            @include desktop {
+                top: 18.75rem;
+                padding-left: 6rem;
+                max-width: 320px;
+                width: 18.5%;
+            }
+        }
     }
+}
+
+.hero-left {
 }
 
 .hero-right {

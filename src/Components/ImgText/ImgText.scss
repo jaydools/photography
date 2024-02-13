@@ -2,23 +2,48 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    100% {
+        transform: translateX(100%);
+    }
+    0% {
+        transform: translateX(0);
+    }
+}
+
 .img-text-container-reverse {
     display: flex;
     flex-direction: row-reverse;
     z-index: 20;
     height: 50svh;
+    overflow: hidden;
 }
 
 .img-text-container {
     display: flex;
     z-index: 20;
     height: 50svh;
+    overflow: hidden;
 }
 
 .img-container {
     object-fit: cover;
     width: 60%;
     border: none;
+    animation: slideOut 2.5s;
+
+    &--visible {
+        animation: slideIn 2.5s;
+    }
 }
 
 .text-container {

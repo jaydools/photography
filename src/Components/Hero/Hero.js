@@ -29,10 +29,12 @@ function Hero({ randoImg }) {
 
     return (
         <section className="hero-container" style={{ backgroundImage: `url(${randoImg[0]})` }}>
-            <div className="hero-left">
-                <h1 className="hero-left__header">Jordan Dooley</h1>
-                <h2 className="hero-left__subhead">Photography</h2>
-            </div>
+            <h1 className="hero-container__header">Jordan Dooley</h1>
+            <h2 className="hero-container__subhead">
+                Website Design <br></br>Software Engineering
+            </h2>
+            <h3 className="hero-container__subhead--small">(Photo Gallery Website)</h3>
+
             <div className="hero-right">
                 {randoImg.map((imageUrl, index) => (
                     <img
