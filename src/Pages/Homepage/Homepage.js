@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Hero from "../../Components/Hero/Hero";
 import ImgText from "../../Components/ImgText/ImgText";
+import Banner from "../../Components/Banner/Banner";
 
 function Homepage() {
     const [getImages, setGetImages] = useState([]);
@@ -102,6 +103,8 @@ function Homepage() {
                 categoryName={landscapes}
             />
             <ImgText currentImg={randoAnimalImg} reverseOrder={true} categoryName={animals} />
+            <Banner />
+            <Banner />
         </main>
     );
 }

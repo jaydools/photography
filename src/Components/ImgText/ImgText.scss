@@ -39,10 +39,10 @@
     object-fit: cover;
     width: 60%;
     border: none;
-    animation: slideOut 2.5s;
+    transform: translateX(100%);
 
     &--visible {
-        animation: slideIn 2.5s;
+        animation: slideIn 2.5s forwards;
     }
 }
 

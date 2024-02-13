@@ -1,0 +1,8 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.banner-container {
+    border: 1px dotted white;
+    height: 35svh;
+}
