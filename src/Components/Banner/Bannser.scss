@@ -4,15 +4,11 @@
 
 .banner-container {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50svh;
     overflow: hidden;
-
-    &__img {
-        width: 100%;
-        // object-fit: cover;
-    }
+    background-size: 200%;
+    // background-repeat: no-repeat;
+    background-position: center;
 
     &__button-wrapper {
         position: absolute;

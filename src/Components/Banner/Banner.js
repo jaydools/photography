@@ -3,17 +3,19 @@ import "./Bannser.scss";
 import { Link } from "react-router-dom";
 
 function Banner({ currentImg, categoryName }) {
-    const imagesRef = useRef(null);
+    const sectionRef = useRef(null);
+
+    console.log(currentImg);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const image = imagesRef.current;
+
             console.log(scrollPosition);
 
-            if (image) {
-                const translateY = -150 * (scrollPosition / window.innerHeight);
-                image.style.transform = `translateY(${translateY}px)`;
+            if (sectionRef.current) {
+                const offset = scrollPosition * 0.5;
+                sectionRef.current.style.backgroundPositionY = `${offset}px`;
             }
         };
 
@@ -26,19 +28,17 @@ function Banner({ currentImg, categoryName }) {
     }, []);
 
     return (
-        <section className="banner-container">
+        <section
+            className="banner-container"
+            ref={sectionRef}
+            style={{ backgroundImage: `url(${currentImg})` }}
+        >
             <div className="banner-container__button-wrapper">
                 <h2 className="banner-container__text">{categoryName}</h2>
                 <Link to="/stars" className="hidden">
                     <button className="banner-container__button">View</button>
                 </Link>
             </div>
-            <img
-                className="banner-container__img"
-                src={currentImg}
-                alt="star image"
-                ref={(el) => (imagesRef.current = el)}
-            />
         </section>
     );
 }
