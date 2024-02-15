@@ -3,13 +3,11 @@ import "./Hero.scss";
 
 function Hero({ randoImg }) {
     const imagesRef = useRef([]);
-    const backgroundRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const scrollers = imagesRef.current;
-            const background = backgroundRef.current;
 
             if (scrollers && scrollers.length > 0) {
                 scrollers.forEach((image) => {

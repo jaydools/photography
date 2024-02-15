@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 function Banner({ currentImg, categoryName }) {
     const imagesRef = useRef(null);
-    const backgroundRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const image = imagesRef.current;
+            console.log(scrollPosition);
 
             if (image) {
                 const translateY = -150 * (scrollPosition / window.innerHeight);
