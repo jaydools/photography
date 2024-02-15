@@ -11,14 +11,14 @@ function ImgText({ currentImg, reverseOrder, categoryName }) {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entery) => {
-                    if (entery.isIntersecting) {
-                        setVisible(true);
-                    } else {
-                        setVisible(false);
+                    if (entery.isIntersecting && entery.intersectionRatio >= 0.15) {
+                        setVisible("entering");
+                    } else if (!entery.isIntersecting && entery.intersectionRatio < 0.15) {
+                        setVisible("exiting");
                     }
                 });
             },
-            { threshold: [0] }
+            { threshold: [0.15, 0.85] }
         );
         if (sectionRef.current) {
             observer.observe(sectionRef.current);
@@ -26,7 +26,7 @@ function ImgText({ currentImg, reverseOrder, categoryName }) {
 
         return () => {
             if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+                observer.observe(sectionRef.current);
             }
         };
     }, []);
@@ -34,7 +34,13 @@ function ImgText({ currentImg, reverseOrder, categoryName }) {
     return (
         <section className={unoReverse} ref={sectionRef}>
             <img
-                className={`img-container ${visible ? "img-container--visible" : ""}`}
+                className={`img-container ${
+                    visible === "entering"
+                        ? "img-container--entering"
+                        : visible === "exiting"
+                        ? "img-container--exiting"
+                        : ""
+                }`}
                 src={currentImg}
             />
             <div className="text-container">

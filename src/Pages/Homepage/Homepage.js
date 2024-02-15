@@ -22,7 +22,7 @@ function Homepage() {
         };
         getImages();
     }, []);
-    console.log(getImages); // gets all images
+    // console.log(getImages); // gets all images
 
     // // logic here for Hero that just picks rando 6
     const getHeroImages = () => {
@@ -82,6 +82,40 @@ function Homepage() {
     };
     const randoAnimalImg = getRandoAnimal();
 
+    // logic to get rando star pics
+    const getRandoStar = () => {
+        if (getImages.resources) {
+            const starImages = getImages.resources.filter(
+                (image) => image.folder === "photography/stars"
+            );
+
+            if (starImages.length === 0) {
+                return console.log("The sky is falling! :(");
+            }
+
+            const randomIndex = Math.floor(Math.random() * starImages.length);
+            return starImages[randomIndex].secure_url;
+        }
+    };
+    const randoStarImg = getRandoStar();
+
+    // logic to get rando mts pics
+    const getRandoMts = () => {
+        if (getImages.resources) {
+            const mtsImages = getImages.resources.filter(
+                (image) => image.folder === "photography/mountians"
+            );
+
+            if (mtsImages.length === 0) {
+                return console.log("No big rocks to show! :(");
+            }
+
+            const randomIndex = Math.floor(Math.random() * mtsImages.length);
+            return mtsImages[randomIndex].secure_url;
+        }
+    };
+    const randoMtsImg = getRandoMts();
+
     // Logic here to get folder name and capitalize
     const getCategoryName = (folder) => {
         // Split the folder string by "/" and return the last part then capitalize
@@ -93,6 +127,8 @@ function Homepage() {
     };
     const landscapes = getCategoryName("photography/landscapes");
     const animals = getCategoryName("photography/animals");
+    const stars = getCategoryName("photography/stars");
+    const mts = getCategoryName("photography/mountians");
 
     return (
         <main>
@@ -103,8 +139,8 @@ function Homepage() {
                 categoryName={landscapes}
             />
             <ImgText currentImg={randoAnimalImg} reverseOrder={true} categoryName={animals} />
-            <Banner />
-            <Banner />
+            <Banner currentImg={randoStarImg} categoryName={stars} />
+            <Banner currentImg={randoMtsImg} categoryName={mts} />
         </main>
     );
 }

@@ -3,6 +3,47 @@
 @use "../../Styles/variables" as *;
 
 .banner-container {
-    border: 1px dotted white;
-    height: 35svh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__button-wrapper {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    &__text,
+    &__button {
+        @include mobileH2;
+        color: $cta;
+        background: none;
+        padding: 1rem;
+
+        @include tablet {
+            @include desktopH2;
+        }
+    }
+
+    &__button {
+        @include button;
+        padding: 0.5rem 3rem;
+    }
+}
+
+.hidden {
+    background: none;
 }

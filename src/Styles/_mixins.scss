@@ -16,7 +16,7 @@
 ////////////////////////////////////////////////// Inputs ///////////
 @mixin button {
     border-radius: $buttonRadius;
-    border: 2px solid $secondary;
+    border: 2px solid $cta;
     padding: 1rem;
     @include mobileH3;
     color: $cta;
